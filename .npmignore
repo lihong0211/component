@@ -1,0 +1,6 @@
+.stroybook/
+node_modules/
+src/
+.history
+.idea
+bin/
