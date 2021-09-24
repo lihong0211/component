@@ -1,7 +1,7 @@
 {
-  "name": "@fly/component",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@cdut007/component-vue",
+  "version": "1.0.2",
+  "description": "ui组件库",
   "main": "index.js",
   "scripts": {
     "lint": "vue-cli-service lint",
@@ -11,7 +11,7 @@
     "build-storybook": "build-storybook"
   },
   "keywords": [],
-  "author": "lihong",
+  "author": "cdut007",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -86,5 +86,6 @@
     "vue-template-compiler": "^2.6.14",
     "webpack": "^5.53.0"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }
