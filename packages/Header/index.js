@@ -1,4 +1,4 @@
-import ElHeader from './Button'
+import ElHeader from './Header'
 
 /* istanbul ignore next */
 ElHeader.install = function (Vue) {
