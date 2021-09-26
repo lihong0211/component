@@ -26,7 +26,7 @@
 <script>
 import './button.css'
 export default {
-  name: 'ElButton',
+  name: 'fly-button',
 
   inject: {
     elForm: {
