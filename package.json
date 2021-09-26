@@ -87,5 +87,6 @@
     "webpack": "^5.53.0"
   },
   "dependencies": {
+    "vue-property-decorator": "^9.1.2"
   }
 }
