@@ -4,8 +4,13 @@ export default {
   title: 'Example/Button',
   component: MyButton,
   argTypes: {
-    backgroundColor: { control: 'color' },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } }
+    size: { control: { type: 'select', options: ['small', 'medium', 'mini'] } },
+    type: { control: { type: 'select', options: ['success', 'warning', 'danger', 'info', 'text'] } },
+    loading: true,
+    disabled: true,
+    autofocus: true,
+    round: true,
+    circle: true
   }
 }
 
@@ -17,23 +22,24 @@ const Template = (args: any, { argTypes }: any) => ({
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-  label: 'Button'
+  type: 'success',
+  size: 'small'
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
-  label: 'Button'
+  type: 'warning',
+  size: 'mini'
 }
 
 export const Large = Template.bind({})
 Large.args = {
-  size: 'large',
-  label: 'Button'
+  size: 'medium',
+  type: 'info'
 }
 
 export const Small = Template.bind({})
 Small.args = {
   size: 'small',
-  label: 'Button'
+  type: 'danger'
 }

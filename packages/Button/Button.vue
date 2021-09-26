@@ -1,53 +1,74 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button
+    class="el-button"
+    @click="handleClick"
+    :disabled="buttonDisabled || loading"
+    :autofocus="autofocus"
+    :type="nativeType"
+    :class="[
+      type ? 'el-button--' + type : '',
+      buttonSize ? 'el-button--' + buttonSize : '',
+      {
+        'is-disabled': buttonDisabled,
+        'is-loading': loading,
+        'is-plain': plain,
+        'is-round': round,
+        'is-circle': circle
+      }
+    ]"
+  >
+    <i class="el-icon-loading" v-if="loading"></i>
+    <i :class="icon" v-if="icon && !loading"></i>
+    <span v-if="$slots.default"><slot></slot></span>
+  </button>
 </template>
 
 <script>
 import './button.css'
-
 export default {
-  name: 'my-button',
+  name: 'ElButton',
 
-  props: {
-    label: {
-      type: String,
-      required: true
+  inject: {
+    elForm: {
+      default: ''
     },
-    primary: {
-      type: Boolean,
-      default: false
-    },
-    size: {
-      type: String,
-      default: 'medium',
-      validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1
-      }
-    },
-    backgroundColor: {
-      type: String
+    elFormItem: {
+      default: ''
     }
   },
 
-  computed: {
-    classes () {
-      return {
-        'storybook-button': true,
-        'storybook-button--primary': this.primary,
-        'storybook-button--secondary': !this.primary,
-        [`storybook-button--${this.size}`]: true
-      }
+  props: {
+    type: {
+      type: String,
+      default: 'success'
     },
-    style () {
-      return {
-        backgroundColor: this.backgroundColor
-      }
+    size: String,
+    icon: {
+      type: String,
+      default: ''
+    },
+    loading: Boolean,
+    disabled: Boolean,
+    autofocus: Boolean,
+    round: Boolean,
+    circle: Boolean
+  },
+
+  computed: {
+    _elFormItemSize () {
+      return (this.elFormItem || {}).elFormItemSize
+    },
+    buttonSize () {
+      return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size
+    },
+    buttonDisabled () {
+      return this.disabled || (this.elForm || {}).disabled
     }
   },
 
   methods: {
-    onClick () {
-      this.$emit('onClick')
+    handleClick (evt) {
+      this.$emit('click', evt)
     }
   }
 }
