@@ -1,8 +1,8 @@
-import ElHeader from './Header'
+import FlyHeader from './Header'
 
 /* istanbul ignore next */
-ElHeader.install = function (Vue) {
-  Vue.component(ElHeader.name, ElHeader)
+FlyHeader.install = function (Vue) {
+  Vue.component(FlyHeader.name, FlyHeader)
 }
 
-export default ElHeader
+export default FlyHeader

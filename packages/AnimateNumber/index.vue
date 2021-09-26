@@ -20,6 +20,7 @@ import { Component, Prop, Watch } from 'vue-property-decorator'
   }
 })
 export default class Number extends Vue {
+  name = 'fly-animate-number'
   /**
    * 模式
    */

@@ -34,7 +34,7 @@ import './header.css'
 import MyButton from '../Button/Button.vue'
 
 export default {
-  name: 'ElHeader',
+  name: 'fly-header',
 
   components: { MyButton },
 

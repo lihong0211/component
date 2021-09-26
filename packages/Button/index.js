@@ -1,8 +1,8 @@
-import ElButton from './Button'
+import FlyButton from './Button'
 
 /* istanbul ignore next */
-ElButton.install = function (Vue) {
-  Vue.component(ElButton.name, ElButton)
+FlyButton.install = function (Vue) {
+  Vue.component(FlyButton.name, FlyButton)
 }
 
-export default ElButton
+export default FlyButton
